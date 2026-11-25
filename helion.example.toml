@@ -1,0 +1,45 @@
+# Helion — contrat d'exécution NVIDIA
+# Passe de traduction. Ce fichier ne lance pas un jeu.
+
+device = "rtx-3060-12"
+chip = "GA106-300"
+reference = true
+
+[wave]
+strategy = "paired-warps"
+guest_width = 64
+host_width = 32
+group_sync = true
+smem_dwords = 2
+
+[memory]
+mirror = "resident-pages"
+rebar = true
+vram_bytes = 12884901888
+used_bytes = 12080670265
+headroom_bytes = 804231623
+overflow = false
+
+[present]
+mode = "quality"
+display = [2560, 1440]
+internal = [1706, 960]
+history_bytes = 85186560
+reflex = true
+frame_generation = "unsupported"
+
+[rt]
+enabled = true
+path = "dxr-inline"
+build = "hardware-dxr"
+bounces = 1
+
+[queues]
+graphics = 1
+async_compute = 1
+copy = 0
+upload_workers = 2
+
+[refuses]
+item = "Frame Generation matérielle."
+

@@ -1,0 +1,17 @@
+{
+  "name": "helion",
+  "version": "0.1.0",
+  "description": "Runtime NVIDIA pour charges GPU type Xbox Series. Référence : RTX 3060 12 Go (GA106).",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test src/helion.test.ts",
+    "plan": "node --experimental-strip-types src/cli.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}
